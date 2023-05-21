@@ -1,4 +1,4 @@
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
     .new_hero_section___73d6f {
         background: none;
     }
@@ -110,8 +110,7 @@ li::marker{
 }
 
 .pill-title {
-    /*flex: 0 0 15%;
-max-width: 15%;*/
+  
     margin: 0px 0 10px 0;
 }
 
@@ -378,12 +377,6 @@ max-width: 15%;*/
         margin: 0 auto !important;
     }
 
-    /*.ui-widget.ui-widget-content li div img {
-padding-top: 10px;
-width: 13px;
-object-fit: cover;
-height: 26px;
-}*/
     .ui-widget.ui-widget-content li div:last-child {
         flex: 0 0 90%;
         max-width: 90%;
@@ -507,4 +500,4 @@ height: 26px;
 .new-card-badge-inner .tag-badge {
     background: #f5365c !important;
     color: #fff;
-}
+} */
