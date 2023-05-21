@@ -1,0 +1,62 @@
+<div class="header bg-gradient-danger pt-5" style="padding-bottom: 20rem">
+    <div class="container">
+        <div class="header-body text-center mb-2">
+            <div class="row justify-content-center">
+
+                <div class="col-lg-5 col-md-6">
+                    <h1 class="text-white">Confirmation de l'adresse e-mail !</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+            xmlns="http://www.w3.org/2000/svg">
+            <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+    </div>
+</div>
+<!-- Page content -->
+<div class="container pb-5" style="margin-top: -45vh !important">
+    <!-- Table -->
+
+    <div class="row justify-content-center">
+        <div id="hahiya" class="col-lg-6 col-md-8">
+            <div class="card bg-secondary shadow border-0">
+                <div class="card-body px-lg-5 py-lg-5">
+                    <div class="text-center text-muted mb-4">
+                        <small>Un code de confirmation a été envoyé à l'adresse e-mail que vous
+                            avez fournie. Entrez le code ci-dessous pour confirmer votre
+                            inscription.</small>
+                    </div>
+                    <form [formGroup]="confirmationForm" (ngSubmit)="onConfirm()">
+                        <div class="form-group">
+                            <label for="confirmationCode">Code de confirmation</label>
+                            <div class="d-flex">
+                                <input type="text" formControlName="digit1" class="form-control mr-2"
+                                    style="width: 50px" id="digit1" placeholder="0" maxlength="1" required
+                                    (keyup)="moveFocus($event, 'digit2')" />
+                                <input type="text" formControlName="digit2" class="form-control mr-2"
+                                    style="width: 50px" id="digit2" placeholder="0" maxlength="1" required
+                                    (keyup)="moveFocus($event, 'digit3')" />
+                                <input type="text" formControlName="digit3" class="form-control mr-2"
+                                    style="width: 50px" id="digit3" placeholder="0" maxlength="1" required
+                                    (keyup)="moveFocus($event, 'digit4')" />
+                                <input type="text" formControlName="digit4" class="form-control mr-2"
+                                    style="width: 50px" id="digit4" placeholder="0" maxlength="1" required
+                                    (keyup)="moveFocus($event, 'digit5')" />
+                                <input type="text" formControlName="digit5" class="form-control" style="width: 50px"
+                                    id="digit5" placeholder="0" maxlength="1" required
+                                    (keyup)="moveFocus($event, 'conf-btn')" />
+                            </div>
+                        </div>
+                        <div *ngIf="incorrectcode" class="alert text-danger px-0 mb-3 pb-0 pt-0">
+                            Code incorrecte
+                        </div>
+                        <button type="submit" id="conf-btn" class="btn btn-primary">Confirmer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

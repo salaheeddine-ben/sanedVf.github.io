@@ -1,0 +1,80 @@
+<div class="groups-container mt-3" style="justify-content: space-between;">
+    <div class="dropdown mb-4">
+        <button class="btn dropdown-toggle " type="button" id="matiereDropdown" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Niveau scolaire <i class="fa-solid fa-caret-down"></i>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="matiereDropdown">
+            <li [class]="selectedniveau === niveau ? 'active' : ''" *ngFor="let niveau of niveauScolaire">
+                <a class="dropdown-item" (click)="selectniveau(niveau)">{{niveau}}</a>
+            </li>
+        </ul>
+    </div>
+<div>
+    <button class="btn bg-default add-btn" type="button" (click)="openAddGroupPopup()">Ajouter un groupe</button>
+</div>
+    <!-- Ajouter ce popup -->
+    <ng-template #addGroupPopup style="z-index: 10000;">
+        <div class="modal-header">
+            <h4 class="modal-title pull-left">Ajouter un groupe</h4>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="closeAddGroupPopup()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div *ngIf="creationMessage" class="alert alert-success">{{ creationMessage }}</div>
+        <div class="modal-body">
+            <form [formGroup]="addGroupForm" (ngSubmit)="addGroup()">
+                <div class="form-group">
+                    <label for="nom">Nom du groupe</label>
+                    <input type="text" class="form-control" id="nom" formControlName="nom">
+                </div>
+                <div class="form-group">
+                    <label for="time">Jour/Heure</label>
+                    <input type="text" class="form-control" id="time" formControlName="time">
+                </div>
+                <div class="form-group">
+                    <label for="pricePerLecture">Prix de la séance</label>
+                    <input type="number" class="form-control" id="pricePerLecture" formControlName="pricePerLecture">
+                </div>
+                <div class="form-group">
+                    <label for="nbEtudiants">Nombre d'étudiants maximum</label>
+                    <input type="number" class="form-control" id="nbEtudiants" formControlName="nbEtudiants">
+                </div>
+              
+                <div class="form-group">
+                    <label for="price">Description</label>
+                    <input type="text" class="form-control" id="description" formControlName="description">
+                </div>
+                <button type="submit" class="btn btn-primary " [disabled]="!addGroupForm.valid">Ajouter</button>
+            </form>
+        </div>
+    </ng-template>
+
+
+
+    <div *ngIf="filteredgroupList.length!=0" class="groups-cards">
+        <!-- Boucle pour afficher les groups -->
+        <div class="card groups-card shadow" *ngFor="let groups of groupList">
+            <div class="card-body bg-transparent">
+                <div class="groups-baniere">
+                    <img src="assets\img\theme\team-1-800x800.jpg" alt="Image de la matière">
+                    <!-- <img src="assets/images/{{groups.matiere}}.jpg" alt="Image de la matière"> -->
+                </div>
+                <div class="groups-info mt-2">
+                    <h3>{{groups.nom}}</h3>
+                    <h5>prix: {{groups.pricePerLecture}} DA</h5>
+                    <h6>Nombre d'etudiants max: {{groups.nbEtudiants}}</h6>
+                    <h6>temps de la seance: {{groups.time}}</h6>
+                    <p class="text-sm text-muted">{{groups.description}}</p>
+                </div>
+                <button class="btn">Voir détails</button>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div *ngIf="filteredgroupList.length==0" class="groups-container mt-7" style="justify-content: center;height: 40vh;">
+    <span> Aucun groupe touvé</span>
+  </div>

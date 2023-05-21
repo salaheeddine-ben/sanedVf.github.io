@@ -1,0 +1,101 @@
+<div class="container-fluid mt-5">
+    <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-xl-7 mb-5 mb-xl-0">
+
+                <div class="card shadow mb-4">
+                    <div class="card-header bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h2 class="mb-0">Groupe</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body attachment">
+
+                        <div class="form-group">
+                            <select class="form-control" formControlName="group" required>
+                                <option value="" selected >Sélectionner un groupe</option>
+                                <option *ngFor="let group of teacherGroups" [value]="group._id">{{ group.nom }}
+                                </option>
+                            </select>
+                            <div *ngIf="courseForm.get('group')?.invalid && courseForm.get('group')?.touched"
+                                class="alert alert-danger">
+                                Le groupe est requis.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="card shadow mb-4">
+                    <div class="card-header bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h2 class="mb-0">Time</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body attachment">
+
+                        <input class="form-control" type="datetime-local" name="time" required formControlName="time">
+                        <div *ngIf="courseForm.get('time')?.invalid && courseForm.get('time')?.touched"
+                            class="alert alert-danger">
+                            Le time est requis.
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="card shadow mb-5 plan">
+                    <div class="card-header bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h6 class="text-uppercase text-light ls-1 mb-1">nom de cour</h6>
+                                <h2 class="mb-0">Plan du cours</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <textarea rows="4" class="form-control form-control-alternative" formControlName="plan" required
+                            placeholder="Votre Plan de cours.."></textarea>
+                        <div *ngIf="courseForm.get('plan')?.invalid && courseForm.get('plan')?.touched"
+                            class="alert alert-danger">
+                            Le plan est requis.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5">
+                <!-- piece jointes -->
+                <div class="card shadow mb-4">
+                    <div class="card-header bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h2 class="mb-0">Pièces jointes</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body attachment">
+
+                        <ul style="list-style-type: none;padding-left: 0;">
+                            <li class="card shadow mb-1"  *ngFor="let file of filesinputs"
+                                style="align-items: center;flex-direction: row;">
+                                <input class="form-control" style="background: transparent;" type="file"
+                                    (change)="onFileSelected($event)">
+                                <button type="button" class="btn btn-danger btn-sm mr-2"
+                                    style="color: #f5365c;background: transparent;"
+                                    (click)="removeFile(file)">x</button>
+                            </li>
+                            <li class="card shadow">
+                                <button type="button" class="btn btn-primary btn-sm" style="max-height: 25px;"
+                                    (click)="addFile()">+</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Créer le cours</button>
+    </form>
+</div>

@@ -1,0 +1,15 @@
+@media screen and (min-width: 768px) {
+    html:not(.auth-layout) .main-content {
+      margin-left: 250px;
+    }
+  }
+  .fixed-right .navbar-vertical.navbar-expand-md {
+    right: 0;
+    border-width: 0 0 0 1px;
+  }
+  .fixed-right .main-content {
+    margin-right: 250px;
+    margin-left: 0;
+  }
+  
+  /*# sourceMappingURL=side.css.map */

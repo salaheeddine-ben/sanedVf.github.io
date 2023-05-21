@@ -1,0 +1,86 @@
+
+.profs-card img {
+    width: 100%;
+    height: 160px;
+    max-height: 220px;
+    border-radius: 0.375rem;
+  }
+  
+  .profs-card button {
+    background-color: #4035B8 !important;
+    border-color: #4035B8 !important;
+    color: white;
+  }
+  
+  .profs-status {
+    color: white;
+    padding: 0.4rem 0.8rem;
+    font-size: 14px;
+    position: absolute;
+    right: 0;
+    top: 10
+  }
+  
+  .btn-proche {
+    background-color: #4035B8 !important;
+    border-color: #4035B8 !important;
+  }
+  
+  .profs-baniere i {
+    font-size: 15px;
+    margin-left: 4px;
+  }
+  
+  .dropdown-menu li {
+    cursor: pointer;
+  }
+  
+
+  .profs-info h5{
+    font-size: 0.950rem;
+  }
+
+
+  .new-card-badge-area {
+    margin: 10px 0 10px 0;
+    padding: 0px;
+    width: fit-content;
+    margin: auto;
+}
+.new-card-badge-inner {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.new-card-badge-inner .card-badge {
+    background: #EFEFF0;
+    border: 0px solid #EFEFF0;
+    box-sizing: border-box;
+    border-radius: 17px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #404145;
+    padding: 0px 8px;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 17px;
+    margin-right: 8px;
+    font-family: "Macan Bold";
+    padding-top: 2px;
+    cursor: pointer;
+}
+
+.new-card-badge-inner .tag-badge {
+    background: #FFB33E;
+    color: #fff;
+}
+
+.btn-rejoins{
+  width: 20%;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}

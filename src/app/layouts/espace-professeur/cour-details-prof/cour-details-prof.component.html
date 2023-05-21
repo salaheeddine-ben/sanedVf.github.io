@@ -1,0 +1,180 @@
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-xl-8 mb-5 mb-xl-0">
+            <div class="card bg-gradient-default shadow mb-5">
+                <div class="card-header bg-transparent">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h6 class="text-uppercase text-light ls-1 mb-1">Overview</h6>
+                            <h2 class="text-white mb-0">Video</h2>
+                        </div>
+                        <div class="col">
+                            <ul class="nav nav-pills justify-content-end">
+                                <li class="nav-item mr-2 mr-md-0">
+                                    <a class="nav-link py-2 px-3" id="startvideo">
+                                        <span class="d-block">Commencer le cour</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body" id="lemhom">
+                    <div class="videos">
+                        <div id="videodiv" ></div>
+                        <div id="videostreamdiv" ></div>
+                    </div>
+
+                    <div id="streamfunction" class=" py-2">
+                        <div id="buttons-container" class="row justify-content-center ">
+                            <div class="col-md-2 text-center">
+                                <button id="mic-btn" type="button" class="btn btn-block btn-dark btn-lg">
+                                    <i id="mic-icon" class="fas fa-microphone"></i>
+                                </button>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <button id="startscreenshare" type="button" class="btn btn-block btn-dark btn-lg">
+                                    <i id="screen-share-icon" class="fas fa-share-square"></i>
+                                </button>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <button id="video-btn" type="button" class="btn btn-block btn-dark btn-lg">
+                                    <i id="video-icon" class="fas fa-video"></i>
+                                </button>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <button id="exit-btn" type="button" class="btn btn-block btn-danger btn-lg">
+                                    <i id="exit-icon" class="fas fa-phone-slash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <button type="button" id="muteVideo">Mute Video</button>
+                    <br><label> Local Audio Level :</label>
+                    <input type="range" min="0" id="localAudioVolume" max="100" step="1"><br>
+                    <label> Remote Audio Level :</label>
+                    <input type="range" min="0" id="remoteAudioVolume" max="100" step="1"> -->
+
+                    <!-- <video #videoElement controls autoplay width="100%" height="380" type='video/webm'> </video> -->
+
+                </div>
+            </div>
+            <div class="card shadow mb-5 plan">
+                <div class="card-header bg-transparent">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h6 class="text-uppercase text-light ls-1 mb-1">nom de cour</h6>
+                            <h2 class="mb-0">Plan du cours</h2>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><i class="fa-solid fa-check text-success"></i>What is the composition</li>
+                        <li><i class="fa-solid fa-check text-success"></i>what is te color</li>
+                        <li><i class="fa-solid fa-check text-success"></i>what is the typography</li>
+                        <li><i class="fa-solid fa-check text-success"></i>what is modular grid and adaptability</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card shadow mb-5">
+                <div class="card-header bg-transparent">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h6 class="text-uppercase text-light ls-1 mb-1">vous avez une question?</h6>
+                            <h2 class="mb-0">Posez votre question</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="ask-question">
+                        <h3></h3>
+                        <form>
+                            <div class="form-group">
+                                <textarea rows="4" class="form-control form-control-alternative"
+                                    placeholder="Posez votre question ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4">
+            <div class="card shadow mb-4">
+                <div class="card-header bg-transparent">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h2 class="mb-0">Pièces jointes</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body attachment">
+                    <ul style="list-style-type: none;padding-left: 0;">
+
+                        <li class="card shadow mb-1" *ngFor="let attach of attachments">
+                            <a [href]="attach" target="_blank" download="fileNam"
+                                style="display: flex;flex-direction: row;padding: 0.5rem 1rem;font-size: 16px;align-items: center;">
+                                <span style="font-size: 20px;"><i [ngClass]="getIconClass(attach)"></i></span>
+                                <span style="margin:0 10px">{{getBasename(attach)}}</span>
+                                <span><i class="fa-solid fa-download fichier"></i></span>
+                                <!-- Ajoutez ici la classe CSS pour l'icône de téléchargement et le gestionnaire d'événements -->
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="card shadow mb-4">
+                <div class="card-header bg-transparent">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h2 class="mb-0">Online</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body attachment">
+                    <div class="student-container" (click)="showAllStudents = true">
+                        <div class="student-images">
+                            <div class="student-image"
+                                *ngFor="let student of etudiants_presents.slice(0, 5); index as i">
+                                <img [src]="student?.imageUrl" alt="Student image">
+                            </div>
+                            <div class="student-image other-student" *ngIf="etudiants_presents.length > 5"
+                                (click)="showAllStudents = true">
+                                <span>+{{etudiants_presents.length - 5}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow mb-4">
+                <div class="card-header bg-transparent">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h2 class="mb-0">All questions</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body attachment">
+                    <!-- <div class="students-list">
+                        <h3>Étudiants présents ({{students.length}})</h3>
+                        <div class="student" *ngFor="let student of students">
+                        <img [src]="student.photo" alt="Photo de l'étudiant">
+                        <span class="name" *ngIf="showStudentName">{{student.name}}</span>
+                        </div>
+                            </div> -->
+                    <div class="students-list">
+                        <div class="student">
+                            <img [src]="" alt="Photo de l'étudiant">
+                            <span class="name" *ngIf="showStudentName" onfocus="showStudentName=true">salah</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

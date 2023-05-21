@@ -1,0 +1,23 @@
+@media (min-width:997px) {
+    #navbar-main > div > ul > li:nth-child(2) > div{
+        top: 60px !important;
+        left: -50px !important;
+    }
+}
+
+@media (max-width:997px) {
+    #navbar-main > div > ul > li:nth-child(2) > div {
+        top: 60px !important;
+        left: -150px !important;
+    }
+}
+@media (max-width:767px) {
+    nav {
+       padding: 0 !important;
+    }
+}
+
+.h4{
+    color: var(--default);
+    font-size: 1.2rem;
+}

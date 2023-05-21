@@ -1,0 +1,510 @@
+@media (min-width: 992px) {
+    .new_hero_section___73d6f {
+        background: none;
+    }
+}
+
+.new_hero_section___73d6f {
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    z-index: 1;
+    height: 424px;
+}
+
+.new_hero_section___73d6f .hero_content_main___73d6f {
+    padding: 70px 0 40px;
+    background: linear-gradient(132.55deg, rgba(0, 0, 0, 0.2) 0%, transparent 52.79%), linear-gradient(180deg, rgba(0, 0, 0, 0.204) 0%, transparent 31.6%, rgba(0, 0, 0, 0.4) 100%), url(https://import.cdn.thinkific.com/114242/LlU321bRkOSjU813pfWf_BG_Image__desktop__jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero_con_main___73d6f h1 {
+    font-family: 'Macan Bold';
+    font-size: 48px;
+    line-height: 60px;
+    color: #fff;
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.hero_content_main___73d6f {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.container___73d6f {
+    max-width: 1330px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.row___73d6f {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.hero_con_main___73d6f {
+    text-align: center;
+}
+
+.typehead-search-main {
+    margin: 0px;
+    padding: 20px 0 40px 0;
+}
+
+.search-inner-con.search-pill-con {
+    max-width: 100%;
+    margin-top: 10px;
+    padding-left: 20px;
+    justify-content: center;
+}
+
+.pill-title h6 {
+    margin-right: 6px;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+.pill-listing {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pill-listing li {
+    margin: 0 6px 10px 0;
+}
+li::marker{
+    display: none !important;
+}
+
+.pill-listing li:last-child {
+    margin: 0px 0 10px 0;
+}
+
+.pill-listing li a {
+    border: 1px solid #fff;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #ffffff;
+    background: transparent;
+    transition: all ease 0.4s;
+    display: block;
+    font-family: 'Macan SemiBold';
+}
+
+.pill-listing li a:hover {
+    color: #222325;
+    background: #FFFFFF;
+}
+
+.pill-title {
+    /*flex: 0 0 15%;
+max-width: 15%;*/
+    margin: 0px 0 10px 0;
+}
+
+.typehead-search-main {
+    margin: 0px;
+    padding: 20px 0 40px 0;
+}
+
+.search-row {
+    margin: 0 -15px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.search-col-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+.search-content-main {
+    margin: 0px;
+    padding: 0px;
+}
+
+.search-inner-con {
+    margin: 0px auto 5px auto;
+    padding: 0px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 495px;
+}
+
+.search-inner-con .search-contol {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #7A7D85;
+    box-sizing: border-box;
+    border-radius: 4px 0px 0px 4px;
+    height: 40px;
+    padding: 0 30px 0 40px;
+    position: relative;
+    flex: 0 0 75%;
+    max-width: 75%;
+    font-family: 'Macan';
+    font-size: 16px;
+    line-height: 24px;
+    color: #000;
+}
+
+.search-inner-con .search-contol::placeholder {
+    color: #95979D;
+}
+
+.search-inner-con .search-contol:hover,
+.search-inner-con .search-contol:focus {
+    border-radius: 4px 0px 0px 4px;
+}
+
+.search-inner-con img {
+    position: absolute;
+    top: 11px;
+    left: 16px;
+    height: 17px;
+    width: 17px;
+    z-index: 99;
+}
+
+.search-btn {
+    background: #4035B8 !important;
+    border-radius: 0px 4px 4px 0;
+    border: 1px solid transparent;
+    display: block;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    font-family: 'Macan';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    height: 40px;
+    flex: 0 0 25%;
+    max-width: 25%;
+    transition: all ease 0.4s;
+}
+
+.ui-widget.ui-widget-content {
+    background: #FFFFFF;
+    border: 1px solid #DADBDD !important;
+    box-sizing: border-box;
+    box-shadow: 0px 0.14px 2.29266px rgba(0, 0, 0, 0.0323114), 0px 0.37px 4.42626px rgba(0, 0, 0, 0.0476886), 0px 3px 7px rgba(0, 0, 0, 0.09);
+    border-radius: 4px;
+    width: 495px !important;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.ui-widget.ui-widget-content li {
+    padding: 0px !important;
+    font-family: 'Macan';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #404145;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active {
+    border: none !important;
+    background: #F5F5F5 !important;
+    font-weight: normal;
+    color: #404145 !important;
+    margin: 0px !important;
+}
+
+.ui-widget.ui-widget-content li:hover {
+    background-color: #F5F5F5 !important;
+}
+
+.ui-widget.ui-widget-content li div:nth-child(1) {
+    padding: 0 0 0px 20px !important;
+}
+
+.ui-widget.ui-widget-content li div:nth-child(2) {
+    padding: 10px 15px !important;
+}
+
+.ui-widget.ui-widget-content li div:nth-child(3) {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 1px 21px !important;
+}
+
+.ui-widget.ui-widget-content li b {
+    font-weight: bold;
+    font-family: 'Macan Bold';
+}
+
+.ui-widget.ui-widget-content li div img {
+    padding-top: 10px;
+}
+
+.search-close {
+    margin: 0px;
+    padding: 0px;
+}
+
+.search-close img {
+    height: 12px;
+    width: 12px;
+    position: absolute;
+    right: 27%;
+    left: auto;
+    top: 13px;
+    z-index: 99;
+}
+
+.mobile-pills-main {
+    display: none;
+}
+
+@media screen and (max-width:767px) {
+    .search-pills {
+        display: none;
+    }
+
+    .mobile-pills-main {
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        position: relative;
+    }
+
+    .mobile-pills-inner {
+        margin: 0px auto;
+        padding: 16px;
+        background: #fff;
+        border: 1px solid #DADBDD;
+        box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.09), 0px 0.37px 4.42626px rgba(0, 0, 0, 0.0476886), 0px 0.14px 2.29266px rgba(0, 0, 0, 0.0323114);
+        border-radius: 4px;
+        width: 100%;
+        max-width: 495px;
+        position: absolute;
+        right: 0;
+        left: 0;
+        transition: opacity 0.4s;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .mobile-pills-inner.open-search-plls {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-pills-content-area {
+        margin: 0px auto;
+        padding: 0px;
+    }
+
+    .mobile-pills-content-area h3 {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 17px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: #95979D;
+        margin: 0 0 10px 0;
+    }
+
+    .mobile-pills-content-area ul {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+
+    .mobile-pills-content-area ul li {
+        margin: 0px 0 10px 0;
+        padding: 0px;
+    }
+
+    .mobile-pills-content-area ul li:last-child {
+        margin: 0px;
+    }
+
+    .mobile-pills-content-area ul li a {
+        display: flex;
+        align-items: center;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        color: #404145;
+    }
+
+    .mobile-pills-content-area ul li a svg {
+        margin: 0 10px 0 0;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .ui-widget.ui-widget-content {
+        background: #FFFFFF;
+        border: 1px solid #DADBDD !important;
+        box-sizing: border-box;
+        box-shadow: 0px 0.14px 2.29266px rgba(0, 0, 0, 0.0323114), 0px 0.37px 4.42626px rgba(0, 0, 0, 0.0476886), 0px 3px 7px rgba(0, 0, 0, 0.09);
+        border-radius: 4px;
+        width: calc(100% - 60px) !important;
+        height: 175px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin: 0 auto !important;
+    }
+
+    /*.ui-widget.ui-widget-content li div img {
+padding-top: 10px;
+width: 13px;
+object-fit: cover;
+height: 26px;
+}*/
+    .ui-widget.ui-widget-content li div:last-child {
+        flex: 0 0 90%;
+        max-width: 90%;
+    }
+
+    .ui-widget.ui-widget-content li div:first-child {
+        flex: 0 0 10%;
+        max-width: 10%;
+        text-align: center;
+    }
+
+    .ui-widget.ui-widget-content li div:first-child {
+        padding: 0 0 0px 10px !important;
+    }
+}
+
+
+.profs-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+  
+  .profs-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+  }
+  .profs-cards .card-body {
+    padding: 1rem !important;
+  }
+  
+  @media (max-width: 668px) {
+    .profs-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+ 
+  .profs-card img {
+    width: 100%;
+    height: 160px;
+    max-height: 220px;
+    border-radius: 0.375rem;
+  }
+  
+  .profs-card button {
+    background-color: #4035B8 !important;
+    border-color: #4035B8 !important;
+    color: white;
+  }
+  
+  .profs-status {
+    color: white;
+    padding: 0.4rem 0.8rem;
+    font-size: 14px;
+    position: absolute;
+    right: 0;
+    top: 10
+  }
+  
+  .btn-proche {
+    background-color: #4035B8 !important;
+    border-color: #4035B8 !important;
+  }
+  
+  .profs-baniere i {
+    font-size: 15px;
+    margin-left: 4px;
+  }
+  
+  .profs-baniere img {
+    max-width: 100%;
+    border-radius: 50%;
+    width: auto;
+  }
+  
+  .dropdown-menu li {
+    cursor: pointer;
+  }
+  
+
+  .profs-info h5{
+    font-size: 0.950rem;
+  }
+
+
+  .new-card-badge-area {
+    margin: 10px 0 10px 0;
+    padding: 0px;
+    margin: auto;
+    width: fit-content;
+    margin-top: 10px;
+}
+.new-card-badge-inner {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.new-card-badge-inner .card-badge {
+    background: #EFEFF0;
+    border: 0px solid #EFEFF0;
+    box-sizing: border-box;
+    border-radius: 17px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #404145;
+    padding: 0px 8px;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 17px;
+    margin-right: 8px;
+    font-family: "Macan Bold";
+    padding-top: 2px;
+    cursor: pointer;
+}
+
+.new-card-badge-inner .tag-badge {
+    background: #f5365c !important;
+    color: #fff;
+}

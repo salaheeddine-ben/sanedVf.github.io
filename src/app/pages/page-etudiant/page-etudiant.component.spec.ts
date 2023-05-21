@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { PageEtudiantComponent } from './page-etudiant.component';
+
+describe('PageEtudiantComponent', () => {
+  let component: PageEtudiantComponent;
+  let fixture: ComponentFixture<PageEtudiantComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ PageEtudiantComponent ]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(PageEtudiantComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

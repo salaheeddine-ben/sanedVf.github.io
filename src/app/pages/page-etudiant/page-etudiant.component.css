@@ -1,0 +1,18 @@
+.div-illu {
+    background: #4035B8 !important;
+    opacity: 0.95;
+}
+
+.div-illu h2 {
+    color: white;
+}
+
+.btn-explore {
+    background-color: #feba8d;
+    color: #6e4a3e;
+    padding: 0.45rem 1.25rem;
+}
+
+.btn-explore a {
+    color: #6e4a3e;
+}

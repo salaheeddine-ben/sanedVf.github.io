@@ -1,0 +1,107 @@
+<!-- <app-sidebar></app-sidebar> -->
+
+<div class="main-content" style="margin-left: 0px !important;">
+    <app-navbar></app-navbar>
+    <!-- <router-outlet></router-outlet> -->
+
+    <section class="new_hero_section new_hero_section___73d6f">
+        <div class="hero_content_main hero_content_main___73d6f">
+            <div class="container container___73d6f">
+                <div class="row row___73d6f">
+                    <div class="col-12 col-12___73d6f">
+                        <div class="hero_con_main hero_con_main___73d6f">
+                            <h1>In-Demand Skills, <br>On-Demand Courses<span>.</span>
+                            </h1>
+                            <h2>Online professional courses, led by the world’s top experts.</h2>
+                        </div>
+                        <section class="typehead-search-main hero-secion">
+                            <div class="search-row">
+                                <div class="search-col-12">
+                                    <div class="search-content-main">
+                                        <form action="/collections" method="get" id="search-form"
+                                            class="products__search-form">
+                                            <div class="search-inner-con">
+                                                <img
+                                                    src="https://cdn-themes.thinkific.com/114242/358329/search-bar-1616701083.svg">
+                                                <!-- here -->
+                                                <input type="text" name="q"
+                                                    class="search-contol myautocomplete ui-autocomplete-input"
+                                                    id="myautocomplete" placeholder="What do you want to learn?"
+                                                    autocomplete="off">
+                                                <a href="jaascript:void(0)" class="search-close"><img
+                                                        src="https://cdn-themes.thinkific.com/114242/358329/search-close-1616701106.svg"
+                                                        style="display: none;"></a>
+                                                <button type="submit" class="search-btn">Search</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="search-pills">
+                                <div class="search-col-12">
+                                    <div class="search-inner-con search-pill-con">
+                                        <div class="pill-title">
+                                            <h6>Popular:</h6>
+                                        </div>
+
+                                        <ul class="pill-listing">
+                                            <li *ngFor="let popular of populars">
+                                                <a href="javascript:void(0);" class="pill-button pop-term">
+                                                    {{popular}}
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid" style="padding-top: 40px;">
+        <div class="profs-cards">
+            <!-- Boucle pour afficher les groups -->
+            <div class="card profs-card shadow" *ngFor="let prof of profList">
+                <div class="card-body bg-transparent" style="text-align: center;">
+                    <div class="profs-baniere">
+                        <img src="{{prof.imageUrl}}" alt="Image de la matière">
+                        <!-- <img src="assets/images/{{groups.matiere}}.jpg" alt="Image de la matière"> -->
+                    </div>
+                    <div class="new-card-badge-area">
+                        <div class="new-card-badge-inner">
+                            <div class="card-badge">{{prof.module}}</div>
+                            <div class="card-badge tag-badge">{{prof.niveau}}</div>
+                        </div>
+                    </div>
+                    <div class="profs-info mt-3">
+                        <h2 style="margin-bottom: 0;">{{prof.prenom}} {{prof.nom}}</h2>
+                        <div style="display: flex;justify-content: space-between;" class="mt-4">
+                            <h5><i class="fa-regular fa-file-video" style="color:#9481f5;"></i>
+                                {{getTotalNumberOfCourses(prof)}} cours</h5>
+                            <h5 style="margin-right: 15px;" > <i class="fa-solid fa-users" style="color:#9481f5"></i>
+                                {{getTotalNumberOfStudents(prof)}} etudiants</h5>
+                        </div>
+                        <div class="mt-1" style="display: flex;justify-content: space-between;">
+                            <h5><i class="fa-solid fa-location-dot" style="color:#9481f5"></i>  {{prof.ville}}</h5>
+                            <h5  ><i class="fa-solid fa-building-columns" style="color:#9481f5"></i>  {{prof.etablissement}}
+                            </h5>
+                        </div>
+                    </div>
+                    <button class="btn mt-4">
+                        <a [routerLink]="['/explore-details', prof.id]" style="color: white;">Voir détails</a>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container-fluid">
+        <app-footer></app-footer>
+    </div>
+</div>

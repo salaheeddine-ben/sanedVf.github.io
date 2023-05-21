@@ -1,0 +1,313 @@
+
+<!-- <button type="button" class="btn btn-primary" >Start Introduction</button> -->
+
+<div class="container-fluid d-flex align-items-center mt-5">
+  <div class="row">
+    <div class="col-lg-7 col-md-10">
+      <h1 *ngIf="!userinfo" class="display-2 ">Hello Salah</h1>
+      <h1 *ngIf="userinfo" class="display-2 ">Hello {{userinfo.nom}}</h1>
+      <p class=" mt-0 mb-5">This is your profile page. You can see the progress you've made with your work and manage
+        your projects or assigned tasks</p>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt-5 hero-example">
+  <div class="row">
+    <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+      <div class="card card-profile shadow">
+        <div class="row justify-content-center">
+          <div class="col-lg-3 order-lg-2">
+            <div class="card-profile-image">
+              <a href="javascript:void(0)">
+                <img src="{{userinfo.imageUrl}}" class="rounded-circle">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+          <div class="d-flex justify-content-between">
+            <a href="javascript:void(0)" class="btn btn-sm btn-info mr-4">Connect</a>
+            <a routerLink="messages" class="btn btn-sm btn-default float-right">Message</a>
+          </div>
+        </div>
+        <div class="card-body pt-0 pt-md-4" style="text-align: center;">
+
+          <div class="text-center mt-2">
+            <h3 *ngIf="userinfo.nom">
+              <span class="font-weight-light">{{userinfo.nom}} {{userinfo.prenom}}</span>
+            </h3>
+            <h3 *ngIf="userinfo.date_naissance">
+              <span class="font-weight-light">{{ calculateAge(userinfo.date_naissance) }}
+                ans</span>
+            </h3>
+            <div *ngIf="userinfo.adresse || userinfo.ville" class="h5 font-weight-300">
+              <i class="ni location_pin mr-2"></i>{{userinfo.adresse}},{{userinfo.ville}}
+            </div>
+            <div *ngIf="userinfo.niveau_scolaire" class="h5 mt-4">
+              <i class="ni business_briefcase-24 mr-2"></i>{{userinfo.niveau_scolaire}}
+            </div>
+            <div *ngIf="userinfo.etablissement" >
+              <i class="ni education_hat mr-2"></i>{{userinfo.etablissement}}
+            </div>
+            <!-- <hr class="my-4" />
+            <p>{{userinfo.bio}}.</p>
+            <hr class="my-4" /> -->
+            <div class="h3 mt-4">
+              <i class="ni ni-money-coins mr-2"></i>Balance: {{userinfo.balance}} DA
+            </div>
+          </div>
+          <button class="btn btn-primary mt-3" (click)="openaddPayement()">Recharger</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8 order-xl-1">
+      <div class="card bg-secondary shadow">
+        <div class="card-header bg-white border-0">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h3 class="mb-0">My account</h3>
+            </div>
+            <div class="col-4 text-right">
+              <a routerLink="" class="btn btn-sm btn-primary">Settings</a>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <h6 class="heading-small text-muted mb-4">User information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label class="form-control-label" for="email">Email address</label>
+                    <input type="email" id="email" class="form-control form-control-alternative" formControlName="email"
+                      placeholder="{{userinfo.email}}" readonly>
+                    <!-- placeholder="{{userinfo.email}}" readonly> -->
+                    <div
+                      *ngIf="userForm.get('email')?.invalid && (userForm.get('email')?.dirty || userForm.get('email')?.touched)"
+                      class="alert text-danger px-0 my-0 pb-0">
+                      <div *ngIf="userForm.get('email')?.errors?.['required']">
+                        Email is required.
+                      </div>
+                      <div *ngIf="userForm.get('email')?.errors?.['email']">
+                        Email is invalid.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="nom">Nom</label>
+                    <input type="text" id="nom" class="form-control form-control-alternative" formControlName="nom"
+                      placeholder="Nom" value="{{userinfo.nom}}">
+                    <div
+                      *ngIf="userForm.get('nom')?.invalid && (userForm.get('nom')?.dirty || userForm.get('nom')?.touched)"
+                      class="alert text-danger px-0 my-0 pb-0">
+                      <div *ngIf="userForm.get('nom')?.errors?.['required']">
+                        Nom is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="prenom">Prenom</label>
+                    <input type="text" id="prenom" class="form-control form-control-alternative"
+                      formControlName="prenom" placeholder="Prenom" value="{{userinfo.prenom}}">
+                    <div
+                      *ngIf="userForm.get('prenom')?.invalid && (userForm.get('prenom')?.dirty || userForm.get('prenom')?.touched)"
+                      class="alert text-danger px-0 my-0 pb-0">
+                      <div *ngIf="userForm.get('prenom')?.errors?.['required']">
+                        Prenom is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="date_naissance">Date Naissance</label>
+                    <input type="date" id="date_naissance" class="form-control form-control-alternative"
+                      formControlName="date_naissance" placeholder="date naissance" value="{{userinfo.date_naissance}}">
+                    <div
+                      *ngIf="userForm.get('date_naissance')?.invalid && (userForm.get('date_naissance')?.dirty || userForm.get('date_naissance')?.touched)"
+                      class="alert text-danger px-0 my-0 pb-0">
+                      <div *ngIf="userForm.get('date_naissance')?.errors?.['required']">
+                        Date Naissance is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="my-4" />
+
+            <h6 class="heading-small text-muted mb-4">Contact information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="form-control-label" for="etablissement">Etablissement</label>
+                    <input id="etablissement" class="form-control form-control-alternative"
+                      formControlName="etablissement" placeholder="Etablissement scolaire"
+                      value="{{userinfo.etablissement}}" type="text">
+                    <div
+                      *ngIf="userForm.get('etablissement')?.invalid && (userForm.get('etablissement')?.dirty || userForm.get('etablissement')?.touched)"
+                      class="alert text-danger px-0 my-0 pb-0">
+                      <div *ngIf="userForm.get('etablissement')?.errors?.['required']">
+                        etablissement is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="form-control-label" for="adresse">Address</label>
+                    <input id="adresse" class="form-control form-control-alternative" formControlName="adresse"
+                      placeholder="Adresse locale" value="{{userinfo.adresse}}" type="text">
+                    <div
+                      *ngIf="userForm.get('adresse')?.invalid && (userForm.get('adresse')?.dirty || userForm.get('adresse')?.touched)"
+                      class="alert text-danger px-0 my-0 pb-0">
+                      <div *ngIf="userForm.get('adresse')?.errors?.['required']">
+                        Adresse is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="ville">Ville</label>
+                    <input type="text" id="ville" class="form-control form-control-alternative" formControlName="ville"
+                      placeholder="Ville" value="{{userinfo.ville}}">
+                    <div
+                      *ngIf="userForm.get('ville')?.invalid && (userForm.get('ville')?.dirty || userForm.get('ville')?.touched)"
+                      class="alert text-danger px-0 my-0 pb-0">
+                      <div *ngIf="userForm.get('ville')?.errors?.['required']">
+                        Ville is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="codePostal">Postal code</label>
+                    <input type="text" id="codePostal" class="form-control form-control-alternative"
+                      formControlName="codePostal" placeholder="Code Postale" value="{{userinfo.codePostal}}">
+                    <div
+                      *ngIf="userForm.get('codePostal')?.invalid && (userForm.get('codePostal')?.dirty || userForm.get('codePostal')?.touched)"
+                      class="alert text-danger px-0 my-0 pb-0">
+                      <div *ngIf="userForm.get('codePostal')?.errors?.['required']">
+                        Code Postal is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="my-4" />
+
+            <h6 class="heading-small text-muted mb-4">About me</h6>
+            <div class="pl-lg-4">
+              <div class="form-group">
+                <label>About Me</label>
+                <textarea rows="4" class="form-control form-control-alternative" formControlName="bio"
+                  placeholder="Votre description..." value="{{userinfo.bio}}"></textarea>
+                <div
+                  *ngIf="userForm.get('bio')?.invalid && (userForm.get('bio')?.dirty || userForm.get('bio')?.touched)"
+                  class="alert text-danger px-0 my-0 pb-0">
+                  <div *ngIf="userForm.get('bio')?.errors?.['required']">
+                    Bio is required.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="submit" style="border: none;background: transparent;float:right">
+              <a class="btn btn-info">Edit profile</a>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<ng-template #addPayement style="z-index: 10000;">
+  <div class="modal-header">
+    <h2 class="modal-title pull-left">Rechargement du compte</h2>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="closeaddPayement()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="page payment-page" >
+    <section class="payment-form ">
+      <div class="container">
+        <form [formGroup]="addPayementForm" (ngSubmit)="addPayementfunction()">
+
+          <div class="card-details">
+            <h3 class="title">Amount</h3>
+            <div class="row">
+              <div class="form-group col-sm-7">
+                <label for="card-amount">Amount</label>
+                <input id="card-amount" type="text" class="form-control" placeholder="the Amount"
+                  aria-label="Card Holder" aria-describedby="basic-addon1">
+              </div>
+
+            </div>
+          </div>
+          <div class="card-details" style="padding-top: 0 !important;">
+            <h3 class="title">Credit Card Details</h3>
+            <div class="row">
+              <div class="form-group col-sm-7">
+                <label for="card-holder">Card Holder</label>
+                <input id="card-holder" type="text" class="form-control" placeholder="Nom du proprietaire"
+                  aria-label="Card Holder" aria-describedby="basic-addon1">
+              </div>
+              <div class="form-group col-sm-5">
+                <label for="">Expiration Date</label>
+                <div class="input-group expiration-date">
+                  <input type="text" class="form-control" placeholder="MM" aria-label="MM"
+                    aria-describedby="basic-addon1">
+                  <span class="date-separator">/</span>
+                  <input type="text" class="form-control" placeholder="YY" aria-label="YY"
+                    aria-describedby="basic-addon1">
+                </div>
+              </div>
+              <div class="form-group col-sm-8">
+                <label for="card-number">Card Number</label>
+                <input id="card-number" type="text" class="form-control" placeholder="Card Number"
+                  aria-label="Card Holder" aria-describedby="basic-addon1">
+              </div>
+              <div class="form-group col-sm-4">
+                <label for="cvc">CVC</label>
+                <input id="cvc" type="text" class="form-control" placeholder="CVC" aria-label="Card Holder"
+                  aria-describedby="basic-addon1">
+              </div>
+              <div class="form-group col-sm-12">
+                <button type="submit" class="btn btn-primary btn-block">Proceed</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+
+</ng-template>
